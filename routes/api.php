@@ -67,6 +67,13 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
+Route::get('/get-api-key', function () {
+    return response()->json([
+        'api_key' => config('services.api_keys.my_api'),
+        'google_api_key' => config('services.api_keys.google_api'),
+    ]);
+});
+
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });

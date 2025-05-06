@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'api_keys' => [
+        'my_api' => env('MY_API_KEY'),
+        'google_api' => env('MY_GOOGLE_API_KEY'),
+    ],
 ];
