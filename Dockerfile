@@ -1,6 +1,6 @@
 FROM php:8.2-cli
 
-# Instalacja zależności systemowych
+# Instalacja zależności systemowych (dodano `default-mysql-client`)
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     curl \
+    default-mysql-client \
     && docker-php-ext-install pdo_mysql zip
 
 # Instalacja Composer
@@ -27,6 +28,6 @@ RUN composer install --no-dev --optimize-autoloader
 # Domyślny port do nasłuchu
 EXPOSE 8000
 
-# Komenda startowa
+# Komenda startowa (uruchamia migracje i serwer)
 CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000
 
