@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:8000', 'http://127.0.0.1:8000', 'http://localhost:5173', 'http://localhost:5174'],
+    'allowed_origins' => ['http://localhost:8000', 'http://127.0.0.1:8000', 'http://localhost:5173', 'http://localhost:5174', 'https://krokmichal.github.io'],
     // 'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:5173')],
 
     'allowed_origins_patterns' => [],
