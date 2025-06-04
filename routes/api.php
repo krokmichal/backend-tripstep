@@ -64,7 +64,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/delete-account', [AuthController::class, 'deleteAccount']);
 });
 
-Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/get-api-key', function () {
